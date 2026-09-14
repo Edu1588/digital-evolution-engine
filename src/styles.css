@@ -19,6 +19,9 @@
  */
 
 @theme inline {
+  --font-serif: "Newsreader", Georgia, serif;
+  --font-sans: "Manrope", sans-serif;
+  --font-mono: "DM Mono", monospace;
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -62,26 +65,31 @@
 }
 
 :root {
-  --radius: 0.625rem;
-  --background: oklch(1 0 0);
-  --foreground: oklch(0.129 0.042 264.695);
+  --radius: 0.125rem;
+  --background: oklch(0.94 0.012 104);
+  --foreground: oklch(0.18 0.018 145);
   --card: oklch(1 0 0);
   --card-foreground: oklch(0.129 0.042 264.695);
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.208 0.042 265.755);
-  --primary-foreground: oklch(0.984 0.003 247.858);
+  --primary: oklch(0.22 0.045 150);
+  --primary-foreground: oklch(0.97 0.01 103);
   --secondary: oklch(0.968 0.007 247.896);
   --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.968 0.007 247.896);
-  --muted-foreground: oklch(0.554 0.046 257.417);
+  --muted: oklch(0.89 0.012 104);
+  --muted-foreground: oklch(0.43 0.02 145);
   --accent: oklch(0.968 0.007 247.896);
   --accent-foreground: oklch(0.208 0.042 265.755);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.929 0.013 255.508);
-  --input: oklch(0.929 0.013 255.508);
-  --ring: oklch(0.704 0.04 256.788);
+  --border: oklch(0.34 0.018 145 / 24%);
+  --input: oklch(0.34 0.018 145 / 38%);
+  --ring: oklch(0.55 0.18 255);
+  --cobalt: oklch(0.43 0.19 258);
+  --cobalt-foreground: oklch(0.97 0.01 245);
+  --forest: oklch(0.21 0.046 151);
+  --forest-foreground: oklch(0.95 0.014 106);
+  --acid: oklch(0.86 0.18 91);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -140,5 +148,37 @@
   body {
     background-color: var(--color-background);
     color: var(--color-foreground);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
   }
+
+  html { scroll-behavior: smooth; }
+
+  ::selection { background: var(--cobalt); color: var(--cobalt-foreground); }
+}
+
+@theme inline {
+  --color-cobalt: var(--cobalt);
+  --color-cobalt-foreground: var(--cobalt-foreground);
+  --color-forest: var(--forest);
+  --color-forest-foreground: var(--forest-foreground);
+  --color-acid: var(--acid);
+}
+
+@utility section-grid {
+  background-image: linear-gradient(to right, var(--border) 1px, transparent 1px);
+  background-size: calc((100vw - 2rem) / 4) 100%;
+}
+
+@utility editorial-section {
+  transition: background-color 700ms ease, color 700ms ease;
+}
+
+@media (min-width: 768px) {
+  .section-grid { background-size: calc((100vw - 5rem) / 12) 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
 }
