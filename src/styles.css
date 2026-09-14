@@ -66,30 +66,31 @@
 
 :root {
   --radius: 0.125rem;
-  --background: oklch(0.94 0.012 104);
-  --foreground: oklch(0.18 0.018 145);
-  --card: oklch(1 0 0);
-  --card-foreground: oklch(0.129 0.042 264.695);
-  --popover: oklch(1 0 0);
-  --popover-foreground: oklch(0.129 0.042 264.695);
-  --primary: oklch(0.22 0.045 150);
-  --primary-foreground: oklch(0.97 0.01 103);
-  --secondary: oklch(0.968 0.007 247.896);
-  --secondary-foreground: oklch(0.208 0.042 265.755);
-  --muted: oklch(0.89 0.012 104);
-  --muted-foreground: oklch(0.43 0.02 145);
-  --accent: oklch(0.968 0.007 247.896);
-  --accent-foreground: oklch(0.208 0.042 265.755);
+  /* Palette: cream #ECECE3 / ink black / cyan #00D1FF */
+  --cream: oklch(0.935 0.006 95);
+  --ink: oklch(0.14 0.005 260);
+  --cyan: oklch(0.8 0.135 222);
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: var(--cream);
+  --card-foreground: var(--ink);
+  --popover: var(--cream);
+  --popover-foreground: var(--ink);
+  --primary: var(--ink);
+  --primary-foreground: var(--cream);
+  --secondary: oklch(0.9 0.008 95);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.9 0.008 95);
+  --muted-foreground: oklch(0.42 0.01 260);
+  --accent: var(--cyan);
+  --accent-foreground: var(--ink);
   --destructive: oklch(0.577 0.245 27.325);
   --destructive-foreground: oklch(0.984 0.003 247.858);
-  --border: oklch(0.34 0.018 145 / 24%);
-  --input: oklch(0.34 0.018 145 / 38%);
-  --ring: oklch(0.55 0.18 255);
-  --cobalt: oklch(0.43 0.19 258);
-  --cobalt-foreground: oklch(0.97 0.01 245);
-  --forest: oklch(0.21 0.046 151);
-  --forest-foreground: oklch(0.95 0.014 106);
-  --acid: oklch(0.86 0.18 91);
+  --border: oklch(0.14 0.005 260 / 22%);
+  --input: oklch(0.14 0.005 260 / 35%);
+  --ring: var(--cyan);
+  --ink-foreground: var(--cream);
+  --cyan-foreground: var(--ink);
   --chart-1: oklch(0.646 0.222 41.116);
   --chart-2: oklch(0.6 0.118 184.704);
   --chart-3: oklch(0.398 0.07 227.392);
@@ -154,15 +155,15 @@
 
   html { scroll-behavior: smooth; }
 
-  ::selection { background: var(--cobalt); color: var(--cobalt-foreground); }
+  ::selection { background: var(--cyan); color: var(--ink); }
 }
 
 @theme inline {
-  --color-cobalt: var(--cobalt);
-  --color-cobalt-foreground: var(--cobalt-foreground);
-  --color-forest: var(--forest);
-  --color-forest-foreground: var(--forest-foreground);
-  --color-acid: var(--acid);
+  --color-cream: var(--cream);
+  --color-ink: var(--ink);
+  --color-ink-foreground: var(--ink-foreground);
+  --color-cyan: var(--cyan);
+  --color-cyan-foreground: var(--cyan-foreground);
 }
 
 @utility section-grid {
